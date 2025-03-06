@@ -153,4 +153,8 @@
     width: 200px;
     height: 200px;
   }
+  .hero-action {
+    gap: 8px;
+    font-weight: 500;
+  }
 }
