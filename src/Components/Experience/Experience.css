@@ -1,0 +1,120 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin: 50px 10%;
+}
+
+.experience-title {
+  position: relative;
+  text-align: center;
+}
+
+.experience-title h1 {
+  padding: 0px 20px;
+  font-size: 60px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.experience-title img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  max-width: 100%;
+  height: auto;
+}
+
+.experience-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 90%;
+}
+
+.experience-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  border-radius: 15px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.2)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Glowing border effect */
+.experience-list::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 15px;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.experience-list:hover::before {
+  opacity: 1;
+}
+
+.experience-list:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+.experience-left h2,
+.experience-right p:first-child {
+  color: #fff;
+  font-weight: bold;
+}
+
+.experience-left p,
+.experience-right :nth-child(2) {
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .experience-title h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-title h1 {
+    font-size: 40px;
+  }
+  .experience-list {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-title h1 {
+    font-size: 35px;
+  }
+  .experience-list {
+    padding: 10px;
+  }
+}
