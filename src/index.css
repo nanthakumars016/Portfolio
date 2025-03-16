@@ -4,14 +4,14 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
-  /* font-family: "Roboto", sans-serif; */
+  box-sizing: border-box; /* Ensures padding and border are included in element dimensions */
+  font-family: "Poppins", sans-serif; /* Default font */
 }
+
 body {
   height: 100vh;
-  width: 100vw;
   background: #161513;
   color: white;
-  font-family: "outfit";
-  overflow-x: hidden;
+  font-family: "Poppins", sans-serif; /* Consistent font */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }

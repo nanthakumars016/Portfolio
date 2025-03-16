@@ -1,9 +1,9 @@
 /* Navbar Container */
 .Navbar {
-  width: 100vw; /* Ensure full width */ 
+  width: 100%; /* Use 100% instead of 100vw to avoid horizontal overflow */
   display: flex;
   align-items: center;
-  justify-content: space-around; /* Changed from space-around */
+  justify-content: space-between; /* Changed from space-around for better alignment */
   padding: 10px 40px; /* Adjusted padding */
   z-index: 1000;
   position: fixed;
