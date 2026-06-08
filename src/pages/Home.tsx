@@ -12,11 +12,11 @@ import { PageTransition } from "@/components/PageTransition";
 import { SEO } from "@/components/SEO";
 
 export default function Home() {
-  const [isMounted, setIsMounted] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
 
   return (
     <PageTransition>
@@ -28,7 +28,7 @@ export default function Home() {
       />
       <main className="relative bg-background">
         {/* Splash Cursor Effect */}
-        {isMounted && <SplashCursor />}
+        {/* {isMounted && <SplashCursor />} */}
         
         {/* Hero Background - Fixed for light mode */}
         <div className="absolute inset-0 h-screen overflow-hidden">

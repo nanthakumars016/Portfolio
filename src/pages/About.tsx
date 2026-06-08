@@ -69,6 +69,15 @@ const orbitalTimeline = [
 const tools = ["VS Code", "Git", "GitHub", "Postman", "JIRA", "Agile", "Scrum", "Sprint Planning"];
 
 export default function About() {
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href =
+      "/resume/Nanthakumar-Full Stack Developer-2 Years Experience.pdf";
+    link.download = "Nanthakumar-Full Stack Developer-2 Years Experience.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <PageTransition>
       <SEO
@@ -87,14 +96,23 @@ export default function About() {
         <div className="container px-4 relative">
           <ScrollAnimation animation="fadeUp" className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              About <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Me</span>
+              About{" "}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Me
+              </span>
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Passionate Full-Stack Developer and Team Lead with 2+ years of experience building high-performance SaaS applications and multi-tenant platforms.
+              Passionate Full-Stack Developer and Team Lead with 2+ years of
+              experience building high-performance SaaS applications and
+              multi-tenant platforms.
             </p>
           </ScrollAnimation>
 
-          <ScrollAnimation animation="scale" delay={0.2} className="max-w-3xl mx-auto mb-20">
+          <ScrollAnimation
+            animation="scale"
+            delay={0.2}
+            className="max-w-3xl mx-auto mb-20"
+          >
             <CardCanvas className="max-w-xl mx-auto">
               <GlowCard>
                 <PortfolioHighlightCard
@@ -112,7 +130,8 @@ export default function About() {
                     authorHandle: "engineering",
                     authorImage:
                       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=128&h=128&fit=crop&crop=face",
-                    content: "Proven track record of leading development, optimizing SQL queries, and architecting robust SaaS infrastructure.",
+                    content:
+                      "Proven track record of leading development, optimizing SQL queries, and architecting robust SaaS infrastructure.",
                     isVerified: true,
                     timestamp: "Team review",
                   }}
@@ -123,7 +142,10 @@ export default function About() {
 
           <ScrollAnimation animation="fadeUp" delay={0.3} className="mb-20">
             <h2 className="text-3xl font-bold text-center mb-12">
-              My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Skills</span>
+              My{" "}
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Skills
+              </span>
             </h2>
             <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {skills.map((skill) => (
@@ -147,21 +169,23 @@ export default function About() {
             <RadialOrbitalTimeline timelineData={orbitalTimeline} />
           </ScrollAnimation>
 
-          <ScrollAnimation animation="scale" delay={0.5} className="text-center">
+          <ScrollAnimation
+            animation="scale"
+            delay={0.5}
+            className="text-center"
+          >
             <h2 className="text-3xl font-bold mb-8">Tools I Use</h2>
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               {tools.map((tool) => (
-                <span 
-                  key={tool} 
+                <span
+                  key={tool}
                   className="px-4 py-2 rounded-full bg-white/5 dark:bg-white/10 backdrop-blur-sm border border-white/10 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
                 >
                   {tool}
                 </span>
               ))}
             </div>
-            <ShinyButton onClick={() => (window.location.href = "/contact")}>
-              Download CV
-            </ShinyButton>
+            <ShinyButton onClick={handleDownloadCV}>Download CV</ShinyButton>
           </ScrollAnimation>
         </div>
       </main>
