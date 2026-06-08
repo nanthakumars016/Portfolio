@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 263 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 263 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 263 50% 10%;
+
+    --primary: 263 84% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 263 30% 96%;
+    --secondary-foreground: 263 50% 10%;
+
+    --muted: 263 20% 96%;
+    --muted-foreground: 263 20% 40%;
+
+    --accent: 239 76% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 263 20% 90%;
+    --input: 263 20% 90%;
+    --ring: 263 84% 58%;
+
+    --radius: 0.75rem;
+
+    /* Premium purple gradient colors */
+    --gradient-start: 263 70% 50%;
+    --gradient-end: 239 76% 59%;
+    
+    /* Glow effects */
+    --glow-primary: 263 84% 58%;
+    --glow-secondary: 239 76% 59%;
+
+    /* Glass effect - for light mode use darker glass */
+    --glass-bg: 263 50% 10%;
+    --glass-border: 263 50% 10%;
+  }
+
+  .dark {
+    --background: 263 50% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 263 40% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 263 40% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 263 84% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 263 66% 35%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 263 30% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 239 76% 59%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 263 30% 20%;
+    --input: 263 30% 20%;
+    --ring: 263 84% 58%;
+
+    --gradient-start: 263 70% 50%;
+    --gradient-end: 239 76% 59%;
+    
+    --glow-primary: 263 84% 58%;
+    --glow-secondary: 239 76% 59%;
+
+    --glass-bg: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+    background-size: 200% auto;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-primary to-accent;
+  }
+
+  .gradient-border {
+    @apply border border-transparent bg-gradient-to-r from-primary to-accent;
+    background-clip: padding-box;
+  }
+
+  /* Premium Glass Effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.3)];
+  }
+
+  .glass-button {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-300;
+  }
+
+  /* Premium Glow Effects */
+  .glow {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.5);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.4);
+  }
+
+  .glow-lg {
+    box-shadow: 0 0 60px -10px hsl(var(--primary) / 0.6);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 40px -10px hsl(263 84% 58% / 0.5);
+  }
+
+  /* Premium Shadow */
+  .shadow-premium {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Neon border animation */
+  .neon-border {
+    position: relative;
+  }
+
+  .neon-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: conic-gradient(from 0deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
+    z-index: -1;
+    animation: rotate-border 3s linear infinite;
+  }
+
+  @keyframes rotate-border {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+/* Prevent horizontal overflow on all screen sizes */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Smooth scrolling with Lenis-like feel */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary/30 text-foreground;
+}
+
+/* Animated glow card */
+@property --glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card-canvas {
+  position: relative;
+  border-radius: 1.5rem;
+  padding: 2px;
+  isolation: isolate;
+}
+
+.card-backdrop {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--glow-angle),
+    hsl(var(--primary)),
+    hsl(var(--accent)),
+    hsl(var(--primary))
+  );
+  animation: glow-rotate 4s linear infinite;
+  opacity: 0.85;
+}
+
+.glow-card {
+  position: relative;
+  border-radius: calc(1.5rem - 2px);
+  background: hsl(var(--background));
+  overflow: hidden;
+}
+
+.glow-card .card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.glow-card .border-element {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: hsl(var(--primary));
+  box-shadow: 0 0 12px hsl(var(--primary) / 0.8);
+  z-index: 2;
+}
+
+.glow-card .border-left {
+  top: 12px;
+  left: 12px;
+}
+
+.glow-card .border-right {
+  top: 12px;
+  right: 12px;
+}
+
+.glow-card .border-top {
+  bottom: 12px;
+  left: 12px;
+}
+
+.glow-card .border-bottom {
+  bottom: 12px;
+  right: 12px;
+}
+
+@keyframes glow-rotate {
+  to {
+    --glow-angle: 360deg;
+  }
+}
+
+/* Shiny button */
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --gradient-angle-offset {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --gradient-percent {
+  syntax: "<percentage>";
+  initial-value: 5%;
+  inherits: false;
+}
+
+@property --gradient-shine {
+  syntax: "<color>";
+  initial-value: white;
+  inherits: false;
+}
+
+.shiny-cta {
+  --shiny-cta-bg: hsl(var(--background));
+  --shiny-cta-bg-subtle: hsl(var(--muted));
+  --shiny-cta-fg: hsl(var(--foreground));
+  --shiny-cta-highlight: hsl(var(--primary));
+  --shiny-cta-highlight-subtle: hsl(var(--accent));
+  --animation: gradient-angle linear infinite;
+  --duration: 3s;
+  --shadow-size: 2px;
+  --transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
+
+  isolation: isolate;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline-offset: 4px;
+  padding: 1rem 2rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  color: var(--shiny-cta-fg);
+  background:
+    linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg)) padding-box,
+    conic-gradient(
+      from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+      transparent,
+      var(--shiny-cta-highlight) var(--gradient-percent),
+      var(--gradient-shine) calc(var(--gradient-percent) * 2),
+      var(--shiny-cta-highlight) calc(var(--gradient-percent) * 3),
+      transparent calc(var(--gradient-percent) * 4)
+    ) border-box;
+  box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle);
+  transition: var(--transition);
+  transition-property: --gradient-angle-offset, --gradient-percent, --gradient-shine;
+}
+
+.shiny-cta::before,
+.shiny-cta::after,
+.shiny-cta span::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-start: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+}
+
+.shiny-cta:active {
+  translate: 0 1px;
+}
+
+.shiny-cta::before {
+  --size: calc(100% - var(--shadow-size) * 3);
+  --position: 2px;
+  --space: calc(var(--position) * 2);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(
+      circle at var(--position) var(--position),
+      white calc(var(--position) / 4),
+      transparent 0
+    )
+    padding-box;
+  background-size: var(--space) var(--space);
+  background-repeat: space;
+  mask-image: conic-gradient(
+    from calc(var(--gradient-angle) + 45deg),
+    black,
+    transparent 10% 90%,
+    black
+  );
+  border-radius: inherit;
+  opacity: 0.35;
+}
+
+.shiny-cta::after {
+  --animation: shimmer linear infinite;
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    -50deg,
+    transparent,
+    var(--shiny-cta-highlight),
+    transparent
+  );
+  mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+  opacity: 0.5;
+}
+
+.shiny-cta span {
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shiny-cta,
+.shiny-cta::before,
+.shiny-cta::after {
+  animation: var(--animation) var(--duration),
+    var(--animation) calc(var(--duration) / 0.4) reverse paused;
+  animation-composition: add;
+}
+
+.shiny-cta:is(:hover, :focus-visible) {
+  --gradient-percent: 20%;
+  --gradient-angle-offset: 95deg;
+  --gradient-shine: var(--shiny-cta-highlight-subtle);
+}
+
+.shiny-cta:is(:hover, :focus-visible),
+.shiny-cta:is(:hover, :focus-visible)::before,
+.shiny-cta:is(:hover, :focus-visible)::after {
+  animation-play-state: running;
+}
+
+@keyframes gradient-angle {
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    rotate: 360deg;
+  }
+}
