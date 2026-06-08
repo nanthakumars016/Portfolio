@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="nGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" />
+
+  <!-- Accent ring -->
+  <circle cx="100" cy="100" r="96" fill="none" stroke="url(#accentGrad)" stroke-width="3.5" opacity="0.9"/>
+
+  <!-- Decorative arc top-right -->
+  <path d="M 145 25 A 85 85 0 0 1 175 100" fill="none" stroke="#00d9ff" stroke-width="2" opacity="0.35" stroke-dasharray="6 4"/>
+
+  <!-- Decorative arc bottom-left -->
+  <path d="M 55 175 A 85 85 0 0 1 25 100" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.35" stroke-dasharray="6 4"/>
+
+  <!-- Code brackets [ ] -->
+  <text x="28" y="118" font-family="'Courier New', monospace" font-size="52" font-weight="900" fill="#00d9ff" opacity="0.18">[</text>
+  <text x="148" y="118" font-family="'Courier New', monospace" font-size="52" font-weight="900" fill="#7c3aed" opacity="0.18">]</text>
+
+  <!-- Main letter N -->
+  <text
+    x="100" y="122"
+    font-family="'Georgia', 'Times New Roman', serif"
+    font-size="88"
+    font-weight="700"
+    text-anchor="middle"
+    fill="url(#nGrad)"
+    filter="url(#glow)"
+    letter-spacing="-2"
+  >N</text>
+
+  <!-- Underline accent bar -->
+  <rect x="62" y="130" width="76" height="4" rx="2" fill="url(#accentGrad)" opacity="0.9"/>
+
+  <!-- Dot accent -->
+  <circle cx="100" cy="148" r="4" fill="#00d9ff" opacity="0.85"/>
+
+  <!-- Small corner dots decoration -->
+  <circle cx="42" cy="58" r="3" fill="#00d9ff" opacity="0.4"/>
+  <circle cx="158" cy="58" r="3" fill="#7c3aed" opacity="0.4"/>
+  <circle cx="42" cy="142" r="3" fill="#7c3aed" opacity="0.4"/>
+  <circle cx="158" cy="142" r="3" fill="#00d9ff" opacity="0.4"/>
+</svg>
