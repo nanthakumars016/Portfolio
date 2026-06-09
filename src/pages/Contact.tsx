@@ -22,7 +22,7 @@ export default function Contact() {
         title="Contact"
         description="Get in touch with Nanthakumar S for web development projects. Available for Full-Stack, SaaS platforms, and contract work in Salem, Tamil Nadu, India."
         keywords="Contact Nanthakumar S, Hire Web Developer, Full-Stack Developer Salem, SaaS Product Engineer India"
-        url="https://nanthakumar.dev/contact"
+        url="https://nanthakumar.vercel.app/contact"
       />
       <main className="pt-24 pb-16 bg-background w-full overflow-x-hidden">
         {/* Background effects */}

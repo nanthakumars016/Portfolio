@@ -23,7 +23,7 @@ export default function PricingPage() {
         title="Pricing"
         description="Affordable web development pricing packages for startups, businesses, and enterprises. Get custom websites, e-commerce solutions, and full-stack applications."
         keywords="Web development pricing, website cost India, freelance developer rates, React developer pricing, custom website packages"
-        url="https://nanthakumar.dev/pricing"
+        url="https://nanthakumar.vercel.app/pricing"
       />
 
       <main className="min-h-screen pt-24 pb-20 relative bg-background w-full overflow-x-hidden">

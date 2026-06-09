@@ -1,33 +1,63 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, Github, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  ScrollAnimation,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/ScrollAnimations";
 
 const projects = [
   {
     title: "Virtua Portal — Business App Marketplace",
-    description: "A multi-tenant SaaS marketplace (Google Play Store style) where businesses register and subscribe to web apps (Billing, CRM, HR, Inventory tools) from one console.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-    tech: ["React.js", "Nuxt.js", "Node.js", "MySQL"],
-    liveUrl: "#",
-    githubUrl: "#"
+    description:
+      "Built entirely from scratch. A multi-tenant SaaS marketplace where businesses register, browse, and subscribe to web apps — Billing, CRM, HR, and Inventory — from a single console. Architected the full frontend, subscription flow, and multi-tenant dashboard.",
+    role: "Full-Stack Developer · Built from Scratch",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    techStack: ["React.js", "Nuxt.js", "Node.js", "MySQL"],
+    isPrivate: true,
+    liveUrl: null,
+    githubUrl: null,
   },
   {
-    title: "RX Square — POS Billing, CRM & E-Commerce",
-    description: "A comprehensive, high-transaction SaaS platform. Features real-time invoicing, inventory tracking, multi-branch support, segmentation, and automated reminders.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-    tech: ["React.js", "Node.js", "MySQL", "REST APIs"],
-    liveUrl: "#",
-    githubUrl: "#"
+    title: "RX Square — POS, CRM & E-Commerce",
+    description:
+      "Designed and built end-to-end from scratch. Handles retail invoicing, multi-branch inventory tracking, customer segmentation, automated notifications, and PDF invoice generation. A high-transaction production SaaS used by real businesses.",
+    role: "Full-Stack Developer · Built from Scratch",
+    image:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+    techStack: ["React.js", "Node.js", "MySQL", "REST APIs"],
+    isPrivate: true,
+    liveUrl: null,
+    githubUrl: null,
   },
   {
     title: "MERN E-Commerce Application",
-    description: "A modern full-stack e-commerce system featuring a complete product catalog, shopping cart management, user accounts, and checkout flow.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js"],
-    liveUrl: "#",
-    githubUrl: "#"
-  }
+    description:
+      "Personal project built from scratch. A full-featured e-commerce system with dynamic product catalogs, cart management, user authentication, and a complete checkout flow.",
+    role: "Solo Developer · Personal Project",
+    image:
+      "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+    techStack: ["MongoDB", "Express.js", "React.js", "Node.js"],
+    isPrivate: false,
+    liveUrl: "https://your-live-link.com", // ← replace with real link
+    githubUrl: "https://github.com/yourrepo", // ← replace with real link
+  },
+  {
+    title: "IZEON Business Logic Portals",
+    description:
+      "Built REST APIs and business logic modules from scratch using Spring Boot and Java, integrated with React.js and Bootstrap dashboards. Focused on high-performance CRUD operations and clean architecture.",
+    role: "Full-Stack Developer · Built from Scratch",
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop",
+    techStack: ["Spring Boot", "Java", "MySQL", "React.js", "Bootstrap"],
+    isPrivate: true,
+    liveUrl: null,
+    githubUrl: null,
+  },
 ];
 
 export function FeaturedProjects() {
@@ -48,72 +78,94 @@ export function FeaturedProjects() {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my recent work and the solutions I've built for clients
+            A showcase of my recent work and the solutions I've built for
+            clients
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="group"
-            >
-              <div className="glass rounded-2xl overflow-hidden h-full flex flex-col">
+        {/* Projects grid */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <StaggerItem key={project.title}>
+              <div className="group relative flex flex-col h-full rounded-2xl border border-border bg-card overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 {/* Image */}
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div className="flex gap-2">
-                      <a
-                        href={project.liveUrl}
-                        className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:scale-110 transition-transform"
-                        aria-label="View live project"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                      <a
-                        href={project.githubUrl}
-                        className="w-10 h-10 rounded-full bg-foreground flex items-center justify-center text-background hover:scale-110 transition-transform"
-                        aria-label="View GitHub repository"
-                      >
-                        <Github className="h-4 w-4" />
-                      </a>
+                  {/* Private overlay badge */}
+                  {project.isPrivate && (
+                    <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-background/90 backdrop-blur-sm text-xs font-medium px-3 py-1.5 rounded-full border border-border">
+                      <Lock className="w-3 h-3" />
+                      Private Project
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                <div className="flex flex-col flex-1 p-6">
+                  {/* Role badge */}
+                  <span className="text-xs font-medium text-primary mb-2">
+                    {project.role}
+                  </span>
+
+                  <h3 className="text-lg font-semibold mb-3 leading-snug">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-4 flex-1">
+
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary"
-                      >
+
+                  {/* Tech stack */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.techStack.map((tech) => (
+                      <Badge key={tech} variant="secondary" className="text-xs">
                         {tech}
-                      </span>
+                      </Badge>
                     ))}
+                  </div>
+
+                  {/* Buttons */}
+                  <div className="flex gap-3 mt-auto">
+                    {project.isPrivate ? (
+                      <span className="flex items-center gap-1.5 text-xs text-muted-foreground border border-dashed border-border rounded-lg px-4 py-2">
+                        <Lock className="w-3 h-3" />
+                        Source code confidential
+                      </span>
+                    ) : (
+                      <>
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 text-center text-sm font-medium bg-primary text-primary-foreground rounded-lg px-4 py-2 hover:opacity-90 transition"
+                          >
+                            Live Demo
+                          </a>
+                        )}
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm font-medium border border-border rounded-lg px-4 py-2 hover:bg-muted transition"
+                          >
+                            <Github className="w-4 h-4" />
+                            Code
+                          </a>
+                        )}
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         <motion.div
           initial={{ opacity: 0 }}

@@ -24,7 +24,7 @@ export default function Home() {
         title="Nanthakumar S | Full-Stack Developer & Team Lead"
         description="Nanthakumar S is a Full-Stack Developer, Team Lead and SaaS Product Engineer specializing in React.js, Nuxt.js, Node.js, and MySQL. Developer of POS, CRM, and multi-tenant SaaS platforms."
         keywords="Full-Stack Developer, Team Lead, SaaS Product Engineer, React.js, Nuxt.js, Node.js, MySQL, POS, CRM, E-Commerce, Salem, Tamil Nadu, India"
-        url="https://nanthakumar.dev"
+        url="https://nanthakumar.vercel.app"
       />
       <main className="relative bg-background">
         {/* Splash Cursor Effect */}

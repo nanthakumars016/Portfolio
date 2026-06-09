@@ -14,7 +14,7 @@ export function SEO({
   description,
   keywords = "Full-Stack Developer, Web Development, React, Node.js, Freelancer, Chennai",
   image = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=630&fit=crop",
-  url = "https://nanthakumar.dev",
+  url = "https://nanthakumar.vercel.app",
   type = "website",
 }: SEOProps) {
   const fullTitle = `${title} | Nanthakumar - Full-Stack Developer`;

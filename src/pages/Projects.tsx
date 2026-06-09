@@ -46,7 +46,7 @@
 //         title="Projects"
 //         description="Explore Nanthakumar's portfolio of web development projects including e-commerce platforms, healthcare portals, POS systems, and more."
 //         keywords="Web Development Projects, Portfolio, React Projects, E-commerce, Healthcare Portal, POS System"
-//         url="https://nanthakumar.dev/projects"
+//         url="https://nanthakumar.vercel.app/projects"
 //       />
 //       <main className="pt-24 pb-16 bg-background w-full overflow-x-hidden">
 //         {/* Background effects */}
@@ -142,7 +142,7 @@ export default function Projects() {
         title="Projects — Nanthakumar S"
         description="Real-world SaaS products, POS systems, CRM platforms, and full-stack apps built from scratch by Nanthakumar S, Full-Stack Developer from Salem, Tamil Nadu."
         keywords="SaaS Projects, POS System, CRM, Multi-tenant, React, Node.js, Full-Stack Portfolio"
-        url="https://nanthakumar.dev/projects"
+        url="https://nanthakumar.vercel.app/projects"
       />
 
       <main className="pt-24 pb-16 bg-background w-full overflow-x-hidden">

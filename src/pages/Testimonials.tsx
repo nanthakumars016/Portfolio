@@ -14,7 +14,7 @@ export default function Testimonials() {
         title="Testimonials"
         description="Read what clients say about working with Nanthakumar. Trusted by businesses across India for web development, e-commerce, and custom software solutions."
         keywords="Client Testimonials, Reviews, Web Developer Reviews, Freelancer Reviews, Chennai Developer"
-        url="https://nanthakumar.dev/testimonials"
+        url="https://nanthakumar.vercel.app/testimonials"
       />
       <main className="pt-24 pb-16 bg-background w-full overflow-x-hidden">
         <div className="fixed inset-0 pointer-events-none">

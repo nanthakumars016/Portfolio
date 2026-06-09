@@ -21,7 +21,7 @@ export default function Services() {
         title="Services"
         description="Professional web development services including custom websites, e-commerce solutions, billing systems, subscription platforms, API integrations, and SEO optimization."
         keywords="Web Development Services, Custom Websites, E-commerce, POS Systems, API Integration, SEO Services, Chennai"
-        url="https://nanthakumar.dev/services"
+        url="https://nanthakumar.vercel.app/services"
       />
       <main className="pt-24 pb-16 bg-background w-full overflow-x-hidden">
         {/* Background effects */}

@@ -84,7 +84,7 @@ export default function About() {
         title="About Me"
         description="Learn about Nanthakumar S, a Full-Stack Developer and Team Lead with 2+ years of experience in React, Node.js, Spring Boot, and SaaS platforms."
         keywords="About Nanthakumar S, Full-Stack Developer, Team Lead, React Developer, Nuxt.js, Salem, Chennai, India"
-        url="https://nanthakumar.dev/about"
+        url="https://nanthakumar.vercel.app/about"
       />
       <main className="pt-24 pb-16 bg-background w-full overflow-x-hidden">
         {/* Background effects */}
@@ -119,22 +119,22 @@ export default function About() {
                   link="/contact"
                   authorName="Nanthakumar S"
                   authorHandle="nanthakumars016"
-                  authorImage="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=face"
+                  authorImage="/nanthakumar.jpeg"
                   content={[
                     "Full-Stack Developer & Team Lead based in Salem, Tamil Nadu, India.",
                     "I specialize in React.js, Nuxt.js, Node.js, Spring Boot, and MySQL — turning complex SaaS requirements into polished digital products.",
                   ]}
                   timestamp="Available for opportunities"
-                  reply={{
-                    authorName: "Virtua Portal / RX Square Team",
-                    authorHandle: "engineering",
-                    authorImage:
-                      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=128&h=128&fit=crop&crop=face",
-                    content:
-                      "Proven track record of leading development, optimizing SQL queries, and architecting robust SaaS infrastructure.",
-                    isVerified: true,
-                    timestamp: "Team review",
-                  }}
+                  // reply={{
+                  //   authorName: "Virtua Portal / RX Square Team",
+                  //   authorHandle: "engineering",
+                  //   authorImage:
+                  //     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=128&h=128&fit=crop&crop=face",
+                  //   content:
+                  //     "Proven track record of leading development, optimizing SQL queries, and architecting robust SaaS infrastructure.",
+                  //   isVerified: true,
+                  //   timestamp: "Team review",
+                  // }}
                 />
               </GlowCard>
             </CardCanvas>
